@@ -1,0 +1,33 @@
+﻿<h2>User List</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Surname</th>
+        <th>Name</th>
+        <th>Middlename</th>
+        <th>Birthday</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.Surname</td>
+            <td>@user.Name</td>
+            <td>@user.Middlename</td>
+            <td>@user.Birthday.ToShortDateString()</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@user.Id">Details</a> |
+                <a asp-action="Edit" asp-route-id="@user.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@user.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-action="Create">Create New</a>

@@ -1,0 +1,36 @@
+﻿@using UsersDto = Task.BLL.DTO.UsersDto
+@model UsersDto
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Edit User</h2>
+
+<form asp-action="Edit">
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" />
+        <label asp-for="Surname" class="control-label"></label>
+        <input asp-for="Surname" class="form-control" />
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Middlename" class="control-label"></label>
+        <input asp-for="Middlename" class="form-control" />
+        <span asp-validation-for="Middlename" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Birthday" class="control-label"></label>
+        <input asp-for="Birthday" class="form-control" />
+        <span asp-validation-for="Birthday" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
